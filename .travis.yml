@@ -1,17 +1,19 @@
 language: node_js
 node_js:
   - 'node'
+git:
+  depth: false
 
 before_install:
-  - rvm install 2.2.2
+  # - rvm install 2.2.2
 
 install:
-  # - npm install --global awesome-lint
-  - gem install awesome_bot
+  - npm install --global https://github.com/chinesedfan/awesome-lint.git#test_ci
+  # - gem install awesome_bot
 
 script:
-  # - awesome-lint README.md
-  - awesome_bot README.md --allow-redirect --allow-dupe
+  - awesome-lint README.md
+  # - awesome_bot README.md --allow-redirect --allow-dupe
 
 notifications:
   email:
